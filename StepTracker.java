@@ -1,9 +1,9 @@
 
 public class StepTracker {
     double[][] expenses = new double[12][30];
-
+    int target = 10000;
     double saveStep(double stepsPerDay, double steps, int mauns, int day) {
-        stepsPerDay = steps + stepsPerDay;
+        stepsPerDay = steps;
         expenses[mauns - 1][day - 1] = steps + expenses[mauns - 1][day - 1];
         System.out.println("Значение сохранено! Текущее колличсво шагов " + stepsPerDay);
         return stepsPerDay;
@@ -29,26 +29,26 @@ public class StepTracker {
         }
         return +sum;
     }
-    static int newTargetApply(int newTarget) {
-        int target = 10000;
-        if (newTarget != 10000) {
-            target = newTarget;
-            return target;
-        }
-        return target;
+   int newTargetApply(int newTarget) {
+
+            return target = newTarget;
+
     }
-    double bestSeries(int monthNew) {
-        int targetApply = newTargetApply(10000);
-        int dayStepsSeria = 0;
+    double bestSeries (int monthNew) {
+        int targetApply = target;
+        int dayStepsSeria = 1;
         for (int i = 0; i < 30; i++)
             if (expenses[monthNew - 1][i] > targetApply) {
-                if (expenses[monthNew - 1][i + 1] > targetApply) {
+
+                if (expenses[monthNew - 1][i+1] > targetApply) {
                     dayStepsSeria = dayStepsSeria + 1;
                 }
             }
         return dayStepsSeria;
     }
 
+    }
 
-}
+
+
 

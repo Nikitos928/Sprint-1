@@ -1,9 +1,9 @@
 import java.util.Scanner;
-public class now  {
+public class Now  { // не знаю как изменять кодировку, когда первый раз открывал русский язык не воспринимался, что то натыкал и он начал понимать, напиши что надо сделать прежде чем тебе отправлять
     public static void main (String[] args)  {
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker();
-
+        Convertor convertor = new Convertor();
         double stepsPerDay = 0;
 
         while (true) {
@@ -24,9 +24,7 @@ public class now  {
                     stepTracker.printAllSteps(monthNew);
                     System.out.println("Максимально кол-во шагов " + stepTracker.findMaxSteps(monthNew));
                     System.out.println("Сумма шагов за месяц " + stepTracker.findSumSteps(monthNew));
-                    System.out.println("Среднее колличесво шагов " + (stepTracker.findSumSteps(monthNew) / 30));
-                    System.out.println("Пройдено в км " + (stepTracker.findSumSteps(monthNew) * 0.00075));
-                    System.out.println("Сожжено килокорий " + ((stepTracker.findSumSteps(monthNew) * 50) / 1000));
+                    convertor.convert(monthNew);
                     System.out.println("Лучшая серия  " + stepTracker.bestSeries(monthNew));
             } else if (command == 3) {
                 System.out.println("Введине новую цель по шагам");
